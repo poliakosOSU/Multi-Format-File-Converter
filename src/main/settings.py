@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # third party
-    'django-crispy-forms',
+    'crispy_forms',
 
     # own
     'converters',

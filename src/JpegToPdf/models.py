@@ -2,12 +2,12 @@ from django.db import models
 
 # Create your models here.
 class Jpeg(models.Model):
-    name  = models.CharField(max_length=100)
+    file_name  = models.CharField(max_length=100, null=True, blank=True)
     file  = models.FileField(upload_to='JpegToPdf/original/')
-    cover = models.ImageField(upload_to='JpegToPdf/original/', null=True, blank=True)
+    # cover = models.ImageField(upload_to='JpegToPdf/original/', null=True, blank=True)
 
 class Pdf(models.Model):
-    name  = models.CharField(max_length=100)
+    file_name  = models.CharField(max_length=100)
     file  = models.FileField(upload_to='JpegToPdf/converted/')
     cover = models.ImageField(upload_to='JpegToPdf/original/', null=True, blank=True)
 
