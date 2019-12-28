@@ -1,12 +1,17 @@
 {% extends 'base.html' %}
 
+
+{% load crispy_forms_tags %}
+
 {% block content %}
-  <h2>Upload</h2>
+  <h2>Upload JPEG</h2>
   <form method="post" enctype="multipart/form-data">
       {% csrf_token %}
       {{ form|crispy }}
   <button type="submit" class="btn btn-primary">Upload File</button>
   </form>
+  <a href="{% url 'display_pdfs_JpegToPdf' %}" class="btn btn-warning">Go To Converted Files</a>
+  <a href="{% url 'home_view' %}" class="btn btn-dark" btn-sm>Go Home</a>
   <h3>Uploaded Files</h3>
   <table class="table mb-0">
     <thread>
@@ -18,19 +23,27 @@
       <tr>
     </thread>
   <body>
-    {% for uploaded_file in uploaded_files %}
+    {% for uploaded_file in the_uploaded_files %}
       <tr>
         <td>
-          <img src="{{ uploaded_file.file.url }}" alt="{{ uploaded_file.file_name }}" style="width: 100px">
+
+          <img src="{{ uploaded_file.image_file.url }}" alt="{{ uploaded_file.file_name }}" style="width: 100px">
+
         </td>
         <td>{{ uploaded_file.file_name }}</td>
         <td>
-          <form method="post" action="{% url delete_JpegToPdf uploaded_file.pk %}">
+          <form method="post" action="{% url 'delete_JpegToPdf' uploaded_file.pk %}">
             {% csrf_token %}
-          <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
           </form>
         <td>
+          <form method="post" action="{% url 'convert_JpegToPdf' uploaded_file.pk %}" >
+            {% csrf_token %}
+            <button type="submit" class="btn btn-success btn-sm">Convert</button>
+          </form>
         </td>
+      {% endfor %}
+  </body>
 
 
 

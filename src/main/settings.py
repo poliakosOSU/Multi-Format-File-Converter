@@ -48,7 +48,12 @@ INSTALLED_APPS = [
     'JpegToPng',
     'PngToJpeg',
 
+    # file deletion
+    'django_cleanup',
+
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

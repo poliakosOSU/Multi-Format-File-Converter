@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<h2>Download PDF</h2>
+  <a href="{% url 'upload_JpegToPdf' %}" class="btn btn-warning">Go To File Upload</a>
+  <a href="{% url 'home_view' %}" class="btn btn-dark" btn-sm>Go Home</a>
+  <h3>Converted Files</h3>
+  <table class="table mb-0">
+    <thread>
+      <tr>
+        <th>Cover</th>
+        <th>Name</th>
+        <th>Delete(For Testing)</th>
+        <th>Download</th>
+      <tr>
+    </thread>
+  <body>
+    {% for pdf in pdfs %}
+      <tr>
+        <td>
+          <img src="{{ pdf.cover.url }}" alt="{{ pdf.file_name }}" style="width: 100px">
+        </td>
+        <td>{{ pdf.file_name }}</td>
+        <td>
+          <form method="post" action="{% url 'delete_converted_JpegToPdf' pdf.pk %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+          </form>
+        </td>
+        <td>
+            <a  href="{{ pdf.pdf_file.url }}" class="btn btn-primary btn-sm" target="_blank" download> Download Pdf</a>
+        </td>
+      {% endfor %}
+  </body>
+
+
+
+
+
+{% endblock %}

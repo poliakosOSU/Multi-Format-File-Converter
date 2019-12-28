@@ -18,12 +18,26 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
-from JpegToPdf.views import home_view, upload_JpegToPdf
+from JpegToPdf.views import (
+    home_view,
+    # Jpeg_display,
+    upload_JpegToPdf,
+    delete_JpegToPdf,
+    convert_JpegToPdf,
+    display_pdfs_JpegToPdf,
+    delete_converted_JpegToPdf,
 
+)
 
 urlpatterns = [
     path('', home_view, name='home_view'),
-    path('upload_JpegToPdf/', upload_JpegToPdf, name='upload_JpegToPdf')
+    # path('JpegToPdf/upload/dispaly', Jpeg_display, name='Jpeg_display'),
+    path('JpegToPdf/upload', upload_JpegToPdf, name='upload_JpegToPdf'),
+    path('JpegTopdf/upload/<int:pk>', delete_JpegToPdf, name='delete_JpegToPdf'),
+    path('JpegTopdf/upload/<int:pk>/convert', convert_JpegToPdf, name='convert_JpegToPdf'),
+    path('JpegToPdf/download', display_pdfs_JpegToPdf, name='display_pdfs_JpegToPdf'),
+    path('JpegTopdf/download/<int:pk>', delete_converted_JpegToPdf, name='delete_converted_JpegToPdf'),
+
     path('admin/', admin.site.urls),
 ]
 
