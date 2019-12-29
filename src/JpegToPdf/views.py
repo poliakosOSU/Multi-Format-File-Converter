@@ -19,7 +19,6 @@ def upload_JpegToPdf(request):
             print("FORM SAVED")
         the_uploaded_files = Jpeg.objects.all()
         form = JpegToPdfForm()
-        # upload_JpegToPdf(method = "GET")
         return render(request, 'JpegToPdf/upload.html',{
             'the_uploaded_files': the_uploaded_files,
             'form': form
@@ -31,16 +30,6 @@ def upload_JpegToPdf(request):
             'the_uploaded_files': the_uploaded_files,
             'form': form
             })
-
-
-# def Jpeg_display(request):
-#     the_uploaded_files = Jpeg.objects.all()
-#     form = JpegToPdfForm()
-#     return render(request, 'JpegToPdf/upload.html',{
-#         'the_uploaded_files': the_uploaded_files,
-#         'form': form
-#     })
-
 
 # delete Jpeg From database (method used for testing)
 def delete_JpegToPdf(request, pk):
