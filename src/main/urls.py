@@ -29,14 +29,29 @@ from JpegToPdf.views import (
 
 )
 
+from PngToPdf.views import (
+    upload_PngToPdf,
+    delete_PngToPdf,
+    convert_PngToPdf,
+    display_pdfs_PngToPdf,
+    delete_converted_PngToPdf,
+)
+
 urlpatterns = [
     path('', home_view, name='home_view'),
     # path('JpegToPdf/upload/dispaly', Jpeg_display, name='Jpeg_display'),
+    # JPEG To PDF
     path('JpegToPdf/upload', upload_JpegToPdf, name='upload_JpegToPdf'),
     path('JpegTopdf/upload/<int:pk>', delete_JpegToPdf, name='delete_JpegToPdf'),
     path('JpegTopdf/upload/<int:pk>/convert', convert_JpegToPdf, name='convert_JpegToPdf'),
     path('JpegToPdf/download', display_pdfs_JpegToPdf, name='display_pdfs_JpegToPdf'),
     path('JpegTopdf/download/<int:pk>', delete_converted_JpegToPdf, name='delete_converted_JpegToPdf'),
+    # PNG To PDF
+    path('PngToPdf/upload', upload_PngToPdf, name='upload_PngToPdf'),
+    path('PngTopdf/upload/<int:pk>', delete_PngToPdf, name='delete_PngToPdf'),
+    path('PngTopdf/upload/<int:pk>/convert', convert_PngToPdf, name='convert_PngToPdf'),
+    path('PngToPdf/download', display_pdfs_PngToPdf, name='display_pdfs_PngToPdf'),
+    path('PngTopdf/download/<int:pk>', delete_converted_PngToPdf, name='delete_converted_PngToPdf'),
 
     path('admin/', admin.site.urls),
 ]

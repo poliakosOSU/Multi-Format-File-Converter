@@ -1,10 +1,10 @@
 from django.shortcuts import render, redirect
 
-from converters.JpegToPdf_converter import ConvertFile
+from converters.ToPdf_converter import ConvertFile
 from .forms import JpegToPdfForm
 from .models import Jpeg, Pdf
-# Create your views here.
 
+# displays home page which contains links to different convertersion fromats
 def home_view(request, *args, **kwargs):
     return render(request, 'home.html',{})
 
