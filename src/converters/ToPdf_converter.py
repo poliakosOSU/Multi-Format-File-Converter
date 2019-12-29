@@ -57,12 +57,12 @@ def scaleAccordingToWidth(width, height):
 
 
 # creating new file name and returns original file extension
-def CreateNewFileName(file):
+def Get_FileName_and_Extension(file):
     # getting original file name
     filename_w_ext = os.path.basename(file)
     original_name, file_extension = os.path.splitext(filename_w_ext)
 
-    # creating new name with a process id and a pdf file extension
+    # create new name with a process id and a pdf file extension
     name = original_name
     pid = str(os.getpid()) # using process id, in case of multiple files with same name are being used
     extenstion = ".pdf"
@@ -90,7 +90,7 @@ def ConvertFile(input_file):
 
     original_image = Image.open(input_file)
 
-    file_name, file_ext = CreateNewFileName(input_file)
+    file_name, file_ext = Get_FileName_and_Extension(input_file)
 
     try:
         for i in ExifTags.TAGS.keys():

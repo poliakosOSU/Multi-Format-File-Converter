@@ -48,7 +48,6 @@ def convert_JpegToPdf(request, pk):
         instance = Pdf(file_name = pdf_name, pdf_file=pdf_url, cover=file.image_file)
         instance.save()
         # later add delete sequence for Jpeg
-
     return redirect('upload_JpegToPdf')
 
 def display_pdfs_JpegToPdf(request):

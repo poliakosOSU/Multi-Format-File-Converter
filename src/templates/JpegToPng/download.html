@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<h2>Jpeg To Png</h2>
+<h3>Download PNG</h3>
+  <a href="{% url 'upload_JpegToPng' %}" class="btn btn-warning">Go To File Upload</a>
+  <a href="{% url 'home_view' %}" class="btn btn-dark" btn-sm>Go Home</a>
+  <h3>Converted Files</h3>
+  <table class="table mb-0">
+    <thread>
+      <tr>
+        <th>Cover</th>
+        <th>Name</th>
+        <th>Delete</th>
+        <th>Download</th>
+      <tr>
+    </thread>
+  <body>
+    {% for png in pngs %}
+      <tr>
+        <td>
+          <img src="{{ png.cover.url }}" alt="{{ png.file_name }}" style="width: 100px">
+        </td>
+        <td>{{ png.file_name }}</td>
+        <td>
+          <form method="post" action="{% url 'delete_converted_JpegToPng' png.pk %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+          </form>
+        </td>
+        <td>
+            <a  href="{{ png.image_file.url }}" class="btn btn-primary btn-sm" target="_blank" download> Download PNG</a>
+        </td>
+      {% endfor %}
+  </body>
+
+
+
+
+
+{% endblock %}
