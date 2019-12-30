@@ -18,7 +18,7 @@ You're sections headers will be used to reference location of destination.
 
 ## Description
 
-The Multi Format File Converter is a web-based image file converter that offers four different file conversion formats. Which curretnly include Jpeg to Pdf, Png to Pdf, Jpeg to Png, and Png to Jpeg. The project is still under development, with a number of new features to be added soon. Currently the Jpeg to Pdf and Png to Pdf conversion methods only allow for conversions to be made into A4 pdf format. I plan on adding and option which will allow for other formats as well. I also plan on adding support for a number of other file formats in the near future.  
+The Multi Format File Converter is a web-based image file converter that offers four different file conversion formats. Which currently include Jpeg to Pdf, Png to Pdf, Jpeg to Png, and Png to Jpeg. The project is still under development, with a number of new features to be added soon. Currently the Jpeg to Pdf and Png to Pdf conversion methods only allow for conversions to be made into A4 pdf format. I plan on adding an option which will allow for other pdf formats as well. I also plan on adding support for a number of other image file formats in the near future.  
 
 #### Technologies
 
