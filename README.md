@@ -30,7 +30,7 @@ The Multi Format File Converter is a web-based image file converter that offers 
 - Sqlite3
 
 
-[Back To The Top](#read-me-template)
+[Back To The Top](#Multi-Format-File-Converter)
 
 ---
 
@@ -78,11 +78,11 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-[Back To The Top](#read-me-template)
+[Back To The Top](#Multi-Format-File-Converter)
 
 ---
 
 ## Author Info
 Coming Soon
 
-[Back To The Top](#read-me-template)
+[Back To The Top](#Multi-Format-File-Converter)
