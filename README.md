@@ -43,7 +43,7 @@ Go to desired installation directory
 
 `cd Multi-Format-File-Converter`
 
-`source bin\activate`
+`source bin/activate`
 
 `cd src`
 
